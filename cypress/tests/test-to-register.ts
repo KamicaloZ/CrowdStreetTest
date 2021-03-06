@@ -5,11 +5,11 @@ import {signInPage} from "../pages/signIn.page";
 
 
 describe("New Registration Test", function() {
-	beforeEach( function () {
+	beforeEach(function () {
 		//Put Data setup here
 	})
 
-	it("Creates a New User", function() {
+	it("Creates a New User", function () {
 		const easy_version = Math.floor(Math.random() * Math.floor(100))
 		const quick_phone = Math.floor(Math.random() * Math.floor(10000000000))
 		const newEmail = "BillShatner" + easy_version.toString() + "@Starship.com"
@@ -32,4 +32,5 @@ describe("New Registration Test", function() {
 		registerPage.notARobot()
 		registerPage.signUpButton()
 		registerPage.modalNameCheck(newFName).should('contain', newFName).should('contain', 'Congrats')
+	})
 })
