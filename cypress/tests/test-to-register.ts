@@ -1,7 +1,5 @@
 import {homePage} from "../pages/home.page";
-import values = require("core-js/fn/object/values");
 import {registerPage} from "../pages/register.page";
-import {signInPage} from "../pages/signIn.page";
 
 
 describe("New Registration Test", function() {
@@ -10,6 +8,7 @@ describe("New Registration Test", function() {
 	})
 
 	it("Creates a New User", function () {
+		//Setting up parameterized data for the test itself here
 		const easy_version = Math.floor(Math.random() * Math.floor(100))
 		const quick_phone = Math.floor(Math.random() * Math.floor(10000000000))
 		const newEmail = "BillShatner" + easy_version.toString() + "@Starship.com"
@@ -19,6 +18,7 @@ describe("New Registration Test", function() {
 		const newPhone = quick_phone.toString()
 		const randomAnswer = Math.floor(Math.random() * Math.floor(2))
 
+		//The steps for the test, hopefully logically named to make it easy for the reader to see what it is trying to do
 		homePage.visitHomePage()
 		homePage.createAccountButton()
 		registerPage.newEmail(newEmail)
@@ -31,6 +31,7 @@ describe("New Registration Test", function() {
 		registerPage.termsUnderstandAgree()
 		registerPage.notARobot()
 		registerPage.signUpButton()
+		//The assertion takes place in the test so that the page object itself can be used for other tests without them having to pass/fail
 		registerPage.modalNameCheck(newFName).should('contain', newFName).should('contain', 'Congrats')
 	})
 })
