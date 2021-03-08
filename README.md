@@ -7,6 +7,10 @@ To get started, for Ubuntu, use the following (probably as sudo) in order to get
 `$ apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb`
 
 
+Next, make sure npm is installed with this:
+
+`$ sudo apt install npm`
+
 
 Next, make sure you are in the directory you want to put this project in, and run:
 
